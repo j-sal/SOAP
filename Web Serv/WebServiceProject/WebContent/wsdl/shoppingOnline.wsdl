@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="showOrderList">
+    <complexType/>
+   </element>
+   <element name="showOrderListResponse">
+    <complexType>
+     <sequence>
+      <element name="showOrderListReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="clearCart">
+    <complexType>
+     <sequence>
+      <element name="address" type="xsd:string"/>
+      <element name="ifBuy" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="clearCartResponse">
+    <complexType>
+     <sequence>
+      <element name="clearCartReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="showCartList">
+    <complexType/>
+   </element>
+   <element name="showCartListResponse">
+    <complexType>
+     <sequence>
+      <element name="showCartListReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="showProductList">
+    <complexType/>
+   </element>
+   <element name="showProductListResponse">
+    <complexType>
+     <sequence>
+      <element name="showProductListReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchProduct">
+    <complexType>
+     <sequence>
+      <element name="productName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchProductResponse">
+    <complexType>
+     <sequence>
+      <element name="searchProductReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addProductToCart">
+    <complexType>
+     <sequence>
+      <element name="productName" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addProductToCartResponse">
+    <complexType>
+     <sequence>
+      <element name="addProductToCartReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="showCartListRequest">
+
+      <wsdl:part element="impl:showCartList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchProductRequest">
+
+      <wsdl:part element="impl:searchProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showProductListResponse">
+
+      <wsdl:part element="impl:showProductListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="clearCartResponse">
+
+      <wsdl:part element="impl:clearCartResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showOrderListResponse">
+
+      <wsdl:part element="impl:showOrderListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="clearCartRequest">
+
+      <wsdl:part element="impl:clearCart" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showProductListRequest">
+
+      <wsdl:part element="impl:showProductList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addProductToCartRequest">
+
+      <wsdl:part element="impl:addProductToCart" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addProductToCartResponse">
+
+      <wsdl:part element="impl:addProductToCartResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showOrderListRequest">
+
+      <wsdl:part element="impl:showOrderList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="showCartListResponse">
+
+      <wsdl:part element="impl:showCartListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchProductResponse">
+
+      <wsdl:part element="impl:searchProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="shoppingOnline">
+
+      <wsdl:operation name="showOrderList">
+
+         <wsdl:input message="impl:showOrderListRequest" name="showOrderListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:showOrderListResponse" name="showOrderListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="clearCart">
+
+         <wsdl:input message="impl:clearCartRequest" name="clearCartRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:clearCartResponse" name="clearCartResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showCartList">
+
+         <wsdl:input message="impl:showCartListRequest" name="showCartListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:showCartListResponse" name="showCartListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showProductList">
+
+         <wsdl:input message="impl:showProductListRequest" name="showProductListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:showProductListResponse" name="showProductListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchProduct">
+
+         <wsdl:input message="impl:searchProductRequest" name="searchProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchProductResponse" name="searchProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addProductToCart">
+
+         <wsdl:input message="impl:addProductToCartRequest" name="addProductToCartRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addProductToCartResponse" name="addProductToCartResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="shoppingOnlineSoapBinding" type="impl:shoppingOnline">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="showOrderList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="showOrderListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="showOrderListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="clearCart">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="clearCartRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="clearCartResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showCartList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="showCartListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="showCartListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="showProductList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="showProductListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="showProductListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="searchProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addProductToCart">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addProductToCartRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addProductToCartResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="shoppingOnlineService">
+
+      <wsdl:port binding="impl:shoppingOnlineSoapBinding" name="shoppingOnline">
+
+         <wsdlsoap:address location="http://tempuri.org/WebServiceProject/services/shoppingOnline"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

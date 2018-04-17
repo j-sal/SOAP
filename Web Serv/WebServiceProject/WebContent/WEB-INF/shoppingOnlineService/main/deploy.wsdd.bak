@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from shoppingOnlineService WSDL service -->
+
+  <service name="shoppingOnline" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="shoppingOnlineService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="shoppingOnline"/>
+      <parameter name="className" value="main.ShoppingOnlineSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="shoppingOnline"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="showOrderList" qname="operNS:showOrderList" xmlns:operNS="http://main" returnQName="retNS:showOrderListReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="clearCart" qname="operNS:clearCart" xmlns:operNS="http://main" returnQName="retNS:clearCartReturn" xmlns:retNS="http://main" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:address" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ifBuy" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="showCartList" qname="operNS:showCartList" xmlns:operNS="http://main" returnQName="retNS:showCartListReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="showProductList" qname="operNS:showProductList" xmlns:operNS="http://main" returnQName="retNS:showProductListReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="searchProduct" qname="operNS:searchProduct" xmlns:operNS="http://main" returnQName="retNS:searchProductReturn" xmlns:retNS="http://main" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:productName" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="addProductToCart" qname="operNS:addProductToCart" xmlns:operNS="http://main" returnQName="retNS:addProductToCartReturn" xmlns:retNS="http://main" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:productName" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="searchProduct showCartList showOrderList clearCart showProductList addProductToCart"/>
+
+  </service>
+</deployment>
